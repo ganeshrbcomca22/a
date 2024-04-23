@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Welcome to the Blogging Application</h2>
+    <p>Below are the latest blog posts:</p>
+    <a href="{% url 'create_blog'%}">create_blog</a>
+    <a href="{% url 'signup'%}">signup</a>
+    <a href="{% url 'login'%}">login</a>
+
+    <ul>
+        {% for blog in blogs %}
+        <li><a href="{% url 'view_blog' blog.id %}">{{ blog.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
